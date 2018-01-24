@@ -169,7 +169,7 @@ public class User implements Serializable {
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled = enabled; 
     }
 
   /* @Override

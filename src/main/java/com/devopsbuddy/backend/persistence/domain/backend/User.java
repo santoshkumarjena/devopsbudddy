@@ -64,7 +64,7 @@ public class User implements Serializable {
 
 // adding a comment
 
-  /*  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
 
     @OneToMany(
@@ -72,7 +72,7 @@ public class User implements Serializable {
             fetch = FetchType.LAZY,
             mappedBy = "user"
     )
-    private Set<PasswordResetToken> passwordResetTokens = new HashSet<>();
+   /* private Set<PasswordResetToken> passwordResetTokens = new HashSet<>();
 
     public Set<PasswordResetToken> getPasswordResetTokens() {
         return passwordResetTokens;
@@ -80,8 +80,8 @@ public class User implements Serializable {
 
     public void setPasswordResetTokens(Set<PasswordResetToken> passwordResetTokens) {
         this.passwordResetTokens = passwordResetTokens;
-    }*/
-
+    }
+*/
     public long getId() {
         return id;
     }
@@ -169,10 +169,10 @@ public class User implements Serializable {
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled = enabled; 
     }
 
-    /*@Override
+  /* @Override
     public boolean isAccountNonExpired() {
         return true;
     }
@@ -192,8 +192,8 @@ public class User implements Serializable {
         Set<GrantedAuthority> authorities = new HashSet<>();
         userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
         return authorities;
-    }*/
-
+    }
+*/
     public String getPassword() {
         return password;
     }
@@ -210,13 +210,13 @@ public class User implements Serializable {
         this.plan = plan;
     }
 
-   /* public Set<UserRole> getUserRoles() {
+   public Set<UserRole> getUserRoles() {
         return userRoles;
     }
 
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
-    }*/
+    }
 
 
 

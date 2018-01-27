@@ -33,8 +33,9 @@ public class DevopsbuddyApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-
-		User user = UserUtils.createBasicUser();
+		String userName="santosh";
+		String email="santosh@test.com";
+		User user = UserUtils.createBasicUser(userName,email);
 		Set<UserRole> userRoles = new HashSet<>();
 		userRoles.add(new UserRole(user, new Role(RolesEnum.BASIC)));
 		LOG.debug("Creating user with username {}", user.getUsername());

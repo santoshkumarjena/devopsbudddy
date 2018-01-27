@@ -14,7 +14,9 @@ import com.devopsbuddy.utils.UserUtils;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -39,7 +41,7 @@ public class RepositoriesIntegrationTest {
     @Autowired
     private UserRepository userRepository;
 
-   
+   @Rule public TestName testName = new TestName();
 
 
     @Before
@@ -70,10 +72,13 @@ public class RepositoriesIntegrationTest {
     @Test
     public void createNewUser() throws Exception {
 
-        Plan basicPlan = createPlan(PlansEnum.BASIC);
+    	String userName = testName.getMethodName();
+    	String email = testName.getMethodName() +"@test.com";
+    	
+    	Plan basicPlan = createPlan(PlansEnum.BASIC);
         planRepository.save(basicPlan);
 
-        User basicUser = UserUtils.createBasicUser();
+        User basicUser = UserUtils.createBasicUser(userName,email);
         basicUser.setPlan(basicPlan);
 
         Role basicRole = createRole(RolesEnum.BASIC);

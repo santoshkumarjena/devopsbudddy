@@ -10,6 +10,7 @@ import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
+import com.devopsbuddy.utils.UserUtils;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -72,7 +73,7 @@ public class RepositoriesIntegrationTest {
         Plan basicPlan = createPlan(PlansEnum.BASIC);
         planRepository.save(basicPlan);
 
-        User basicUser = createBasicUser();
+        User basicUser = UserUtils.createBasicUser();
         basicUser.setPlan(basicPlan);
 
         Role basicRole = createRole(RolesEnum.BASIC);
@@ -124,7 +125,7 @@ public class RepositoriesIntegrationTest {
          return new Role(rolesEnum);
     }
 
-    private User createBasicUser() {
+   /* private User createBasicUser() {
 
         User user = new User();
         user.setUsername("basicUser");
@@ -139,6 +140,6 @@ public class RepositoriesIntegrationTest {
         user.setProfileImageUrl("https://blabla.images.com/basicuser");
 
         return user;
-    }
+    }*/
 
 }

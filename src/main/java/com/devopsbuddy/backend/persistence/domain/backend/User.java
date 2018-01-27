@@ -14,7 +14,7 @@ import java.util.Set;
  * Created by tedonema on 28/03/2016.
  */
 @Entity
-public class User implements Serializable {
+public class User implements Serializable,UserDetails {
 
     /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
@@ -172,7 +172,7 @@ public class User implements Serializable {
         this.enabled = enabled; 
     }
 
-  /* @Override
+   @Override
     public boolean isAccountNonExpired() {
         return true;
     }
@@ -193,7 +193,7 @@ public class User implements Serializable {
         userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
         return authorities;
     }
-*/
+
     public String getPassword() {
         return password;
     }

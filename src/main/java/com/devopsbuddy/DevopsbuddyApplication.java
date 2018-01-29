@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,6 +27,14 @@ public class DevopsbuddyApplication implements CommandLineRunner {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Value("${webmaster.username}")
+	private String webmasterUsername;
+	@Value("${webmaster.password}")
+	private String webmasterPassword;
+	@Value("${webmaster.email}")
+	private String webmasterEmail;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(DevopsbuddyApplication.class, args);
@@ -33,8 +42,9 @@ public class DevopsbuddyApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-
-		User user = UserUtils.createBasicUser();
+		String userName="santosh";
+		String email="santosh@test.com";
+		User user = UserUtils.createBasicUser(userName,email);
 		Set<UserRole> userRoles = new HashSet<>();
 		userRoles.add(new UserRole(user, new Role(RolesEnum.BASIC)));
 		LOG.debug("Creating user with username {}", user.getUsername());

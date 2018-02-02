@@ -7,7 +7,7 @@ public class UserUtils {
 	private UserUtils(){
 		throw new AssertionError("Non Instantiable");
 	} 
-	
+
 	public static User createBasicUser(String userName,String email) {
 
         User user = new User();

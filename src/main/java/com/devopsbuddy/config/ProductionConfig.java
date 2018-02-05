@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import com.devopsbuddy.backend.service.EmailService;
 import com.devopsbuddy.backend.service.SmtpEmailService;
-import com.devopsbuddy.web.i18n.I18NService;
+
 
 import groovy.util.logging.Log;
 

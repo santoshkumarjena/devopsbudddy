@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devopsbuddy.backend.service.EmailService;
 import com.devopsbuddy.web.domain.frontend.FeedbackPojo;
-import com.devopsbuddy.web.i18n.I18NService;
+import com.devopsbuddy.backend.service.I18NService;
 
 @Controller
 public class ContactController {

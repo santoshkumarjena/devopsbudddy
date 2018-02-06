@@ -104,6 +104,19 @@ public class ForgotMyPasswordController {
 
         return EMAIL_ADDRESS_VIEW_NAME;
     }
+    
+    
+  /*  @RequestMapping(value = CHANGE_PASSWORD_PATH, method = RequestMethod.GET)
+    public String changeUserPasswordGet(@RequestParam("id") long id,@RequestParam("token") String token,Locale locale,ModelMap modelMap){
+    	
+    	if(StringUtils.isEmpty("token") || id==0){
+    		
+    		
+    	}
+    	
+    	return CHANGE_PASSWORD_VIEW_NAME;
+    }*/
+    
 
     @RequestMapping(value = CHANGE_PASSWORD_PATH, method = RequestMethod.GET)
     public String changeUserPasswordGet(@RequestParam("id") long id,

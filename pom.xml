@@ -64,6 +64,12 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 		
+		<!-- Hibernate dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		
 		<!-- Web Jars for Bootstrap and Jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -81,7 +87,12 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>			
 		</dependency>
-	
+	<dependency>
+			<groupId>uk.co.jemos.podam</groupId>
+			<artifactId>podam</artifactId>
+			<version>6.0.4.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
 		
 	</dependencies>
 

@@ -119,10 +119,11 @@ public class SignupController {
         LOG.debug("Transforming user payload into User domain object");
         User user = UserUtils.fromWebUserToDomainUser(payload);
 
-        /*// Stores the profile image on Amazon S3 and stores the URL in the user's record
+        // Stores the profile image on Amazon S3 and stores the URL in the user's record
         if (file != null && !file.isEmpty()) {
 
-            String profileImageUrl = s3Service.storeProfileImage(file, payload.getUsername());
+        	String profileImageUrl = null;
+        	//String profileImageUrl = s3Service.storeProfileImage(file, payload.getUsername());
             if (profileImageUrl != null) {
                 user.setProfileImageUrl(profileImageUrl);
             } else {
@@ -131,7 +132,7 @@ public class SignupController {
             }
 
         }
-*/
+
         // Sets the Plan and the Roles (depending on the chosen plan)
         LOG.debug("Retrieving plan from the database");
         Plan selectedPlan = planService.findPlanById(planId);

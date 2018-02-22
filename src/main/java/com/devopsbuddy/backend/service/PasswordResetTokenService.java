@@ -1,9 +1,9 @@
 package com.devopsbuddy.backend.service;
 
-import com.devopsbuddy.backend.persistence.domain.backend.PasswordResetToken;
-import com.devopsbuddy.backend.persistence.domain.backend.User;
-import com.devopsbuddy.backend.persistence.repositories.PasswordResetTokenRepository;
-import com.devopsbuddy.backend.persistence.repositories.UserRepository;
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Clock;
-import java.time.LocalDateTime;
-import java.util.UUID;
+import com.devopsbuddy.backend.persistence.domain.backend.PasswordResetToken;
+import com.devopsbuddy.backend.persistence.domain.backend.User;
+import com.devopsbuddy.backend.persistence.repositories.PasswordResetTokenRepository;
+import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 
 /**
  * Created by tedonema on 10/04/2016.
